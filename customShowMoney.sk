@@ -1,0 +1,15 @@
+#このコードはVault、Jeconが導入されていないとエラーが出ます
+command /money [<player>]:
+  trigger:
+    if arg-1 is not set:
+      send "&aあなたの所持金は、&e&l&n%player's money%円&aです！" to player
+      stop
+     
+     if arg-1 is set:
+      if player has permission "op":
+        send "&b&l%arg-1%&aさんの所持金は、%e&l&n%arg-1's money%円&aです！" to player
+        stop
+      
+      if player does not have permission "op":
+        send "&cYou don't have permission to do that!"
+        stop
